@@ -24,6 +24,10 @@
     {
       "path": "source/resources/fonts/Lato-Semibold.ttf",
       "sha1": "96569e2cfcc3a298bb1aea21103d0d1e3c7e2ed4"
+    },
+    {
+      "path": "source/resources/fonts/index.js",
+      "sha1": "c7e18c542163448079af506cb85f8366890c4583"
     }
   ]
 }

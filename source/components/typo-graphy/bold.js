@@ -1,10 +1,13 @@
 import React from 'react';
-import fonts from '@config/fonts';
-import {Text} from 'react-native';
+import { Text } from 'react-native';
+import { fonts } from '../../resources/fonts';
 
-const Bold = ({label, custTextStyle = {}, ...props}) => {
+const Bold = ({ label, custTextStyle = {}, ...props }) => {
   return (
-    <Text style={{fontFamily: fonts.latoBold, ...custTextStyle}} {...props}>
+    <Text style={{
+      fontFamily: fonts.bold,
+      ...custTextStyle
+    }} {...props}>
       {label}
       {props.children}
     </Text>

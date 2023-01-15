@@ -1,10 +1,10 @@
 import React from 'react';
 import fonts from '@config/fonts';
-import {Text} from 'react-native';
+import { Text } from 'react-native';
 
-const SemiBold = ({label, custTextStyle = {}, ...props}) => {
+const SemiBold = ({ label, custTextStyle = {}, ...props }) => {
   return (
-    <Text style={{fontFamily: fonts.latoSemiBold, ...custTextStyle}} {...props}>
+    <Text style={{ fontFamily: fonts.latoSemiBold, ...custTextStyle }} {...props}>
       {label}
     </Text>
   );

@@ -1,10 +1,13 @@
 import React from 'react';
-import fonts from '@config/fonts';
-import {Text} from 'react-native';
+import { Text } from 'react-native';
+import { fonts } from '../../resources/fonts';
 
-const Regular = ({label, custTextStyle = {}, ...props}) => {
+const Regular = ({ label, custTextStyle = {}, ...props }) => {
   return (
-    <Text style={{fontFamily: fonts.latoRegular, ...custTextStyle}} {...props}>
+    <Text style={{
+      fontFamily: fonts.regular,
+      ...custTextStyle
+    }} {...props}>
       {label}
       {props.children}
     </Text>
