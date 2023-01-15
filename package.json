@@ -1,0 +1,50 @@
+{
+  "name": "rnlatest",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android:start": "cd android && ./gradlew --stop && cd .. && npx react-native run-android",
+    "android:install": "react-native run-android --variant=release",
+    "android:debug": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android:jsbundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android:rm-duplicate-drawables": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && rm -rf android/app/src/main/res/drawable-* && rm -rf android/app/src/main/res/raw/*",
+    "android:rm-duplicate": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
+    "android:clean": "cd android && ./gradlew clean",
+    "android:release": "cd android && ./gradlew :app:assembleRelease",
+    "android:bundle": "cd android && ./gradlew bundleRelease -x bundleReleaseJsAndAssets",
+    "ios:start": "react-native run-ios",
+    "ios:build": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
+    "ios:pod-install": "cd ios && pod install",
+    "start": "react-native start",
+    "test": "jest",
+    "postinstall": "npx jetify",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@react-navigation/drawer": "^6.5.7",
+    "@react-navigation/native": "^6.1.2",
+    "@react-navigation/stack": "^6.3.11",
+    "react": "18.1.0",
+    "react-native": "0.70.6",
+    "react-native-gesture-handler": "^2.9.0",
+    "react-native-image-crop-picker": "0.38.1",
+    "react-native-reanimated": "^2.14.1",
+    "react-native-safe-area-context": "^4.4.1",
+    "react-native-screens": "^3.18.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "0.72.3",
+    "react-test-renderer": "18.1.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
